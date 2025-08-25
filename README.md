@@ -5,16 +5,17 @@ This repository demonstrates how to link an Azure API Center resource to an exis
 
 ## 📦 Repository Structure
 
+
 ```text
-bicep/
-  main.bicep                # Main Bicep entry point orchestrating all resources
-  main.json                 # Compiled ARM template (optional)
-  modules/
-    apiCenter.bicep         # Deploys API Center, workspace, and links APIM as a source
-    identity.bicep          # Creates User Assigned Managed Identity (UAMI)
-    roleAssignment-apimReader.bicep # Assigns APIM Reader role to UAMI on APIM
-  parameters/
+main.bicep                # Main Bicep entry point orchestrating all resources
+main.json                 # Compiled ARM template (optional)
+modules/
+  apiCenter.bicep         # Deploys API Center, workspace, and links APIM as a source
+  identity.bicep          # Creates User Assigned Managed Identity (UAMI)
+  roleAssignment-apimReader.bicep # Assigns APIM Reader role to UAMI on APIM
+parameters/
   main.bicepparam         # Parameter file for main.bicep (default values)
+  main.local.bicepparam   # Optional: local parameter overrides
 ```
 
 ## 🧩 Module Breakdown
@@ -45,11 +46,12 @@ bicep/
 
 ### Usage
 
-1. Update the parameter file (`main.bicepparam`) with your environment values.
+
+1. Update the parameter file (`parameters/main.bicepparam`) with your environment values.
 2. Deploy using Azure CLI:
-   ```pwsh
-   az deployment sub create --location <location> --template-file ./bicep/main.bicep --parameters @./bicep/parameters/main.bicepparam
-   ```
+  ```pwsh
+  az deployment sub create --location <location> --template-file ./main.bicep --parameters @./parameters/main.bicepparam
+  ```
 3. Verify resources in the Azure Portal.
 
 ---
