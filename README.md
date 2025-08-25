@@ -1,5 +1,6 @@
 # 🚀 Azure API Center & APIM Integration with Bicep
 **Automate, Secure, and Connect your APIs with Azure API Center and APIM using Bicep!**
+
 This repository demonstrates how to link an Azure API Center resource to an existing Azure API Management resource.  The approach shown here uses a User-Assigned Managed Identity for authorization to the API Management resource.
 ---
 
